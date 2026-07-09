@@ -2,7 +2,7 @@ import { navItems } from "../data/portfolioData";
 
 function Navbar() {
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-black/20 backdrop-blur-2xl">
+    <header  className="fixed top-0 w-full z-50 glass">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <a href="#home" className="text-xl font-black tracking-wide">
           My<span className="text-[var(--primary)]">Portfolio</span>
