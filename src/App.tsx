@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Journey from "./components/Journey";
 import useSmoothScroll from "./hooks/useSmoothScroll";
 import GalaxyBackground from "./background/GalaxyBackground";
+import CursorGlow from "./components/CursorGlow";
+import ScrollReveal from "./animation/ScrollReveal";
 
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
 
   return (
     <main className="relative min-h-screen">
+      <CursorGlow />
       <GalaxyBackground/>
       <div className="pointer-events-none fixed inset-0 opacity-50">
         <div className="absolute left-8 top-24 h-72 w-72 rounded-full bg-[var(--primary)] blur-3xl" />
@@ -34,10 +37,17 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+    <ScrollReveal direction="left">
       <Skills />
+    </ScrollReveal>
       <Projects />
+    <ScrollReveal direction="right">
       <Journey />
+    </ScrollReveal>
+    <ScrollReveal direction="zoom">
       <Contact />
+    </ScrollReveal>
+    
       <Footer />
     </main>
   );

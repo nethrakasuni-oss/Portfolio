@@ -1,5 +1,6 @@
 import SectionTitle from "./SectionTitle";
 import { journey } from "../data/portfolioData";
+import ScrollReveal from "../animation/ScrollReveal";
 
 function Journey() {
   return (
@@ -7,10 +8,12 @@ function Journey() {
       id="journey"
       className="relative mx-auto max-w-6xl px-5 py-24"
     >
+    <ScrollReveal direction="up">
       <SectionTitle
         title="My Journey"
         subtitle="My growth and development path"
-      />
+        />
+    </ScrollReveal>
 
       <div className="relative mt-12">
 
@@ -19,6 +22,11 @@ function Journey() {
 
         <div className="space-y-12">
           {journey.map((item, index) => (
+            <ScrollReveal
+            key={item.title}
+            delay={index * 150}
+            direction={index % 2 === 0 ? "up" : "right"}
+          >
             <div
               key={index}
               className={`relative flex flex-col md:flex-row ${
@@ -61,7 +69,8 @@ function Journey() {
 
               </div>
 
-            </div>
+              </div>
+              </ScrollReveal>
           ))}
         </div>
 

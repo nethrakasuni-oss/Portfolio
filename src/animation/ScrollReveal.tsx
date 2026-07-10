@@ -1,46 +1,64 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
 
-interface Props {
-  children: React.ReactNode;
+type ScrollRevealProps = {
+  children: ReactNode;
+  className?: string;
   delay?: number;
-}
+  direction?: "up" | "down" | "left" | "right" | "zoom";
+};
 
+function ScrollReveal({
+  children,
+  className = "",
+  delay = 0,
+  direction = "up",
+}: ScrollRevealProps) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
 
-function ScrollReveal({children, delay = 0}: Props) {
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(element);
+        }
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const directions = {
+    up: "translate-y-10",
+    down: "-translate-y-10",
+    left: "translate-x-10",
+    right: "-translate-x-10",
+    zoom: "scale-95",
+  };
 
   return (
-    <motion.div
-
-      initial={{
-        opacity:0,
-        y:60,
-        filter:"blur(10px)"
-      }}
-
-      whileInView={{
-        opacity:1,
-        y:0,
-        filter:"blur(0px)"
-      }}
-
-      viewport={{
-        once:true,
-        amount:0.2
-      }}
-
-      transition={{
-        duration:0.8,
-        delay,
-        ease:"easeOut"
-      }}
-
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`
+        transition-all duration-700 ease-out
+        ${visible ? "opacity-100 translate-x-0 translate-y-0 scale-100" : `opacity-0 ${directions[direction]}`}
+        ${className}
+      `}
     >
-
       {children}
-
-    </motion.div>
+    </div>
   );
 }
-
 
 export default ScrollReveal;

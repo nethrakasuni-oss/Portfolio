@@ -60,14 +60,6 @@ export const projects = [
     status: "Ongoing",
     github: "https://github.com/nethrakasuni-oss/ai-study-planner.git",
   },
-  {
-    title: "Clothing Store App",
-    description:
-      "An ongoing clothing store application built with the MEAN stack and integrated payment portal features.",
-    tech: ["MongoDB", "Express.js", "Angular", "Node.js", "Payment Gateway"],
-    status: "Ongoing",
-    github: "https://github.com/nethrakasuni-oss/clothing-store.git",
-  },
 
   {
     title: "Pet Care Shops management system",

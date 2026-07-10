@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { navItems } from "../data/portfolioData";
 
 function Navbar() {
@@ -7,6 +8,11 @@ function Navbar() {
         <a href="#home" className="text-xl font-black tracking-wide">
           My<span className="text-[var(--primary)]">Portfolio</span>
         </a>
+
+        <motion.span
+          layoutId="underline"
+          className="absolute bottom-0 h-[2px] w-full bg-pink-500"
+        />
 
         <div className="hidden gap-6 md:flex">
           {navItems.map((item) => (
@@ -24,7 +30,7 @@ function Navbar() {
           href="#contact"
           className="rounded-full bg-[var(--primary)] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-pink-950/40 transition hover:scale-105"
         >
-          Hire Me
+          Let's Connect
         </a>
       </nav>
     </header>
