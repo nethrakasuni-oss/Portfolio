@@ -1,17 +1,36 @@
 import SectionTitle from "./SectionTitle";
 import { projects } from "../data/portfolioData";
+import TiltCard from "./TiltCard";
+import ScrollReveal from "../animation/ScrollReveal";
 
 function Projects() {
   return (
     <section id="projects" className="relative mx-auto max-w-6xl px-5 py-24">
+      <ScrollReveal>
       <SectionTitle title="Projects" subtitle="What i build" />
-
+      </ScrollReveal>
       <div className="grid gap-6 md:grid-cols-3">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
+          <ScrollReveal key={project.title} delay={index * 120} direction="up">
+          <TiltCard key={project.title}>
           <article
             key={project.title}
             className="glass flex min-h-[360px] flex-col rounded-[2rem] p-6 transition hover:-translate-y-2"
-          >
+            >
+              <div
+                className="
+                absolute
+                inset-0
+                translate-x-[-100%]
+                bg-gradient-to-r
+                from-transparent
+                via-white/10
+                to-transparent
+                transition-transform
+                duration-1000
+                hover:translate-x-[100%]
+                "
+              />
             <div className="mb-3 flex items-center justify-between gap-3">
               <h3 className="text-xl font-bold">{project.title}</h3>
 
@@ -45,7 +64,9 @@ function Projects() {
                 GitHub Repo
               </a>
             </div>
-          </article>
+            </article>
+            </TiltCard>
+            </ScrollReveal>
         ))}
       </div>
     </section>

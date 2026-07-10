@@ -1,8 +1,10 @@
 import SectionTitle from "./SectionTitle";
+import ScrollReveal from "../animation/ScrollReveal";
 
 function Contact() {
   return (
     <section id="contact" className="relative mx-auto max-w-6xl px-5 py-24">
+      <ScrollReveal direction="right">
       <SectionTitle title="Contact" subtitle="Let’s develop together" />
 
       <div className="glass mx-auto max-w-3xl rounded-[2rem] p-8 text-center md:p-12">
@@ -39,8 +41,10 @@ function Contact() {
             GitHub
           </a>
         </div>
-      </div>
+        </div>
+        </ScrollReveal>
     </section>
+    
   );
 }
 
