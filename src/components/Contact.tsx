@@ -17,8 +17,10 @@ function Contact() {
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
-            href="mailto:nethrakasuni@gmail.com"
+              href="mailto:nethrakasuni@gmail.com"
+              target="_blank"
             className="rounded-full bg-white px-6 py-3 font-semibold text-[#2b0824] transition hover:scale-105"
+            rel="noopener noreferrer"
           >
             Email
           </a>
@@ -26,7 +28,7 @@ function Contact() {
           <a
             href="https://www.linkedin.com/in/kasuni-nethra-8a962538b"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="rounded-full border border-white/20 px-6 py-3 font-semibold transition hover:bg-white/10"
           >
             LinkedIn
@@ -35,7 +37,7 @@ function Contact() {
           <a
             href="https://github.com/nethrakasuni-oss"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="rounded-full border border-white/20 px-6 py-3 font-semibold transition hover:bg-white/10"
           >
             GitHub
