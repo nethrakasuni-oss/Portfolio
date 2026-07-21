@@ -47,18 +47,22 @@ function ScrollReveal({
   };
 
   return (
-    <div
-      ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`
-        transition-all duration-700 ease-out
-        ${visible ? "opacity-100 translate-x-0 translate-y-0 scale-100" : `opacity-0 ${directions[direction]}`}
-        ${className}
-      `}
-    >
-      {children}
-    </div>
-  );
+  <div
+    ref={ref}
+    style={{ transitionDelay: `${delay}ms` }}
+    className={`
+      transition-all duration-700 ease-out
+      ${
+        visible
+          ? "opacity-100 translate-x-0 translate-y-0 scale-100 pointer-events-auto"
+          : `opacity-0 ${directions[direction]} pointer-events-none`
+      }
+      ${className}
+    `}
+  >
+    {children}
+  </div>
+);
 }
 
 export default ScrollReveal;
