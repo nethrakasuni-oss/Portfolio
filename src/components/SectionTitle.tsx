@@ -40,9 +40,7 @@ function SectionTitle({
       >
         <TextType
           text={[
-            subtitle,
-            "Building modern digital experiences",
-            "Creating clean user interfaces"
+            subtitle
           ]}
 
           typingSpeed={70}

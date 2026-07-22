@@ -18,9 +18,9 @@ function About() {
         </p>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <InfoCard title="Location" value="Your City, Country" />
+          <InfoCard title="Location" value="Gampaha, Sri Lanka" />
           <InfoCard title="Undergraduate" value="Data Science / B.Sc.Information Technology" />
-          <InfoCard title="Goal" value="Data Scientist or AI Engineer" />
+          <InfoCard title="Goal" value="Data Scientist ,AI Engineer and Full-Stack Developer" />
         </div>
       </div>
     </section>
