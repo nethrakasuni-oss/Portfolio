@@ -12,6 +12,7 @@ import useSmoothScroll from "./hooks/useSmoothScroll";
 import GalaxyBackground from "./background/GalaxyBackground";
 import CursorGlow from "./components/CursorGlow";
 import ScrollReveal from "./animation/ScrollReveal";
+import Experience from "./components/Experience";
 
 
 function App() {
@@ -39,7 +40,10 @@ function App() {
       <About />
     <ScrollReveal direction="left">
       <Skills />
-    </ScrollReveal>
+      </ScrollReveal>
+      <ScrollReveal direction="up">
+        <Experience />
+      </ScrollReveal>
       <Projects />
     <ScrollReveal direction="right">
       <Journey />
